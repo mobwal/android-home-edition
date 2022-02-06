@@ -30,7 +30,7 @@ android {
         applicationId "com.mobwal.home"
         minSdk 22
         targetSdk 31
-        versionCode 2
+        versionCode 3
         versionName getVersion()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         setProperty("archivesBaseName", getVersion())

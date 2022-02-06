@@ -50,7 +50,7 @@ public class DataManager {
         WalkerSQLContext sqlContext = WalkerApplication.getWalkerSQLContext(mContext);
         Collection<RouteItem> collection;
 
-        String query = "SELECT r.id as ID, r.c_name as C_NUMBER, (select count(*) from POINT as p where p.f_route = r.id) as N_TASK, (select count(*) from POINT as p where p.f_route = r.id and p.b_anomaly = 1) as N_ANOMALY, (select count (*) from (select p.id from POINT as p inner join RESULT as rr on rr.f_point = p.id where p.f_route = r.id group by p.id) as t) as N_DONE, (select count (*) from (select p.id from POINT as p where p.f_route = r.id and p.b_check = 0) as t) as N_FAIL, r.d_date as D_DATE, r.B_EXPORT, r.c_readme as C_README, r.b_check as B_CHECK from Route as r" + (TextUtils.isEmpty(search) ? "" : " where r.c_name like '%' || ? || '%'") + " order by r.n_date desc";
+        String query = "SELECT r.id as ID, r.c_name as C_NUMBER, (select count(*) from POINT as p where p.f_route = r.id) as N_TASK, (select count(*) from POINT as p where p.f_route = r.id and p.b_anomaly = 1) as N_ANOMALY, (select count (*) from (select p.id from POINT as p inner join RESULT as rr on rr.f_point = p.id where p.f_route = r.id and p.b_check = 1 group by p.id) as t) as N_DONE, (select count (*) from (select p.id from POINT as p where p.f_route = r.id and p.b_check = 0) as t) as N_FAIL, r.d_date as D_DATE, r.B_EXPORT, r.c_readme as C_README, r.b_check as B_CHECK from Route as r" + (TextUtils.isEmpty(search) ? "" : " where r.c_name like '%' || ? || '%'") + " order by r.n_date desc";
 
         if(TextUtils.isEmpty(search)) {
             collection = sqlContext.select(query, null, RouteItem.class);

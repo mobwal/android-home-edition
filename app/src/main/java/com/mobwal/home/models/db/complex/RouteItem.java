@@ -23,6 +23,6 @@ public class RouteItem {
     public boolean b_check;
 
     public String toUserString(Context context) {
-        return MessageFormat.format(context.getString(R.string.route_item_subtitle) + ": {0} из {1}.", n_fail > 0 ? n_fail : n_task - n_done, n_task);
+        return MessageFormat.format(context.getString(R.string.route_item_subtitle) + ": {0} из {1}.", n_task - n_done, n_task);
     }
 }
