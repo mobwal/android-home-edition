@@ -1,0 +1,74 @@
+import java.text.DecimalFormat
+import java.text.SimpleDateFormat
+
+/*
+ * *
+ *  * Created by Alexandr Krasnov on 01.04.21 16:41
+ *  * Copyright (c) 2021 . All rights reserved.
+ *  * Last modified 01.04.21 16:41
+ *
+ */
+
+plugins {
+    id 'com.android.library'
+}
+
+android {
+    compileSdk 31
+
+    defaultConfig {
+        minSdk 16
+        targetSdk 31
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+        setProperty("archivesBaseName", getProperty("archivesBaseName") + "-" + getVersion())
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android.material:material:1.5.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test:core:1.4.0'
+}
+
+static def startOfDay() {
+    def now = new Date().getTime()
+    def start = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse("2021-29-03 0:00:00").getTime()
+
+    return new DecimalFormat("#").format(Math.floor(Math.abs(now - start) / (1000 * 3600 * 24)))
+}
+
+static def minuteOfDay() {
+    def now = new Date()
+    return (now.format("HH").toInteger() * 60) + now.format("mm").toInteger()
+}
+
+static def getRelease() {
+    /**
+     * 0 – альфа (прототип);
+     * 1 – бета (бета);
+     * 2 – выпуск-кандидат (передан на тестирование заказчику);
+     * 3 – публичный выпуск (окончательно передан заказчику).
+     */
+    return 0
+}
+
+static def getVersion() {
+    return "1." + startOfDay() + "." + getRelease() + "." + minuteOfDay()
+}

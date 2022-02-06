@@ -1,0 +1,3 @@
+layout 'vbox'
+    switchfield 'b_done' 'Done'
+    textview 'c_notice' 'Notice'

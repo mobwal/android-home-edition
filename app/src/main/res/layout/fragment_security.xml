@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.global.SecurityFragment">
+
+    <EditText
+        android:id="@+id/security_pass"
+        android:layout_width="@dimen/size_196"
+        android:layout_height="wrap_content"
+        android:autofillHints=""
+        android:hint="@string/pin_settings"
+        android:inputType="textPassword"
+        android:minHeight="@dimen/size_48"
+        android:textAlignment="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/security_name"/>
+
+    <ImageButton
+        android:id="@+id/security_ok"
+        android:layout_width="@dimen/size_48"
+        android:layout_height="@dimen/size_48"
+        android:src="@drawable/ic_baseline_arrow_right_alt_24"
+        app:layout_constraintLeft_toRightOf="@id/security_pass"
+        app:layout_constraintTop_toTopOf="@id/security_pass"
+        app:layout_constraintBottom_toBottomOf="@id/security_pass"
+        android:contentDescription="@string/ok"
+        android:background="@android:color/transparent"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/security_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/security_pass"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/security_copyright">
+
+        <TextView
+            android:id="@+id/security_name_before"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name_before"
+            android:textSize="36sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/security_name_after"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name_after"
+            android:textSize="36sp"
+            android:textAllCaps="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/security_name_before"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TextView
+            android:id="@+id/security_name_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_tag"
+            android:textSize="16sp"
+            android:textAllCaps="true"
+            app:layout_constraintTop_toBottomOf="@id/security_name_before"
+            app:layout_constraintLeft_toLeftOf="@id/security_name_before"
+            app:layout_constraintRight_toRightOf="@id/security_name_after"
+            android:textColor="?android:attr/textColorHint"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/security_copyright"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="@string/copyright"
+        android:layout_margin="@dimen/indent_8"
+        android:ellipsize="end"
+        android:gravity="end"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

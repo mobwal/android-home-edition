@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/import_navigation"
+    app:startDestination="@+id/nav_text_import">
+
+    <fragment
+        android:id="@+id/nav_text_import"
+        android:name="com.mobwal.home.ui.imp.TextImportFragment"
+        android:label="@string/import_txt"
+        tools:layout="@layout/fragment_text_import" />
+
+    <fragment
+        android:id="@+id/nav_layout_import"
+        android:name="com.mobwal.home.ui.imp.LayoutImportFragment"
+        android:label="@string/import_layout"
+        tools:layout="@layout/fragment_layout_import" />
+
+    <fragment
+        android:id="@+id/nav_zip_import"
+        android:name="com.mobwal.home.ui.imp.ZipImportFragment"
+        android:label="@string/import_zip"
+        tools:layout="@layout/fragment_zip_import" />
+</navigation>

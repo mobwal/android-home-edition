@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="blueDark">#27632a</color>
+    <color name="blue">#388e3c</color>
+    <color name="blueLight">#81c784</color>
+
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#FFFFFF</color>
+
+    <color name="colorSecondaryDark">#b2102f</color>
+    <color name="colorSecondary">#ff1744</color>
+    <color name="colorSecondaryLight">#ff4569</color>
+
+    <color name="colorFloatingDark">#9f4c06</color>
+    <color name="colorFloating">#e46d09</color>
+    <color name="colorFloatingLight">#e98a3a</color>
+
+    <color name="colorHintDark">#435761</color>
+    <color name="colorHint">#7f97a2</color>
+    <color name="colorHintLight">#cfd8dc</color>
+
+    <color name="colorSuccessDark">#27632a</color>
+    <color name="colorSuccess">#388e3c</color>
+    <color name="colorSuccessLight">#81c784</color>
+
+    <color name="grayDark">#707070</color>
+    <color name="gray">#9e9e9e</color>
+    <color name="grayLight">#cfcfcf</color>
+
+    <color name="bg_night">#424242</color>
+
+    <!-- специальные цвета преопределенные из mimic-library -->
+    <color name="primaryTextColor">@color/colorPrimaryText</color>
+    <color name="hintTextColor">@color/gray</color>
+    <color name="errorTextColor">@color/colorSecondary</color>
+
+    <color name="gold">#FFDF00</color>
+    <color name="goldDark">#FFD700</color>
+</resources>

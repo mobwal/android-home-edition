@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="exception" translate="false">Exception: </string>
+	<string name="alert_title" translate="false">Mimic message</string>
+	<string name="min_value">La valeur minimale doit être</string>
+	<string name="max_value">La valeur maximale doit être</string>
+	<string name="button">Bouton</string>
+	<string name="component_error">Erreur de traitement du composant</string>
+	<string name="require_field">champs requis</string>
+	<string name="error_min_value">La longueur minimale de la valeur doit être</string>
+	<string name="error_max_value">La longueur maximale de la valeur doit être</string>
+	<string name="select">Sélectionner</string>
+</resources>

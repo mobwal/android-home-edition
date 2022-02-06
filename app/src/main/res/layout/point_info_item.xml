@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingTop="@dimen/indent_16"
+    android:paddingStart="@dimen/indent_16"
+    android:paddingEnd="@dimen/indent_16">
+
+    <ImageButton
+        android:id="@+id/point_info_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:contentDescription="@string/remove"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
+        android:src="@drawable/ic_point_info_delete_24"
+        app:layout_constraintBottom_toBottomOf="@id/point_info_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/point_info_label" />
+
+    <TextView
+        android:id="@+id/point_info_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Label"
+        android:textSize="@dimen/font_14"
+        android:layout_marginBottom="@dimen/indent_4"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="@dimen/indent_8"
+        app:layout_constraintEnd_toStartOf="@id/point_info_delete"
+        android:textColor="?android:attr/textColorSecondary"/>
+
+    <TextView
+        android:id="@+id/point_info_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/point_info_label"
+        tools:text="Значение"
+        android:textSize="@dimen/font_16"
+        android:layout_marginBottom="@dimen/indent_16"
+        android:layout_marginEnd="@dimen/indent_8"
+        android:textColor="?android:attr/textColor"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/point_info_delete"
+        app:layout_constraintBottom_toBottomOf="@id/point_info_separate"/>
+
+    <View
+        android:id="@+id/point_info_separate"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/textColorHint"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

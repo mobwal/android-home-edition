@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translate="false">MOBWAL</string>
+    <string name="app_name_before" translate="false">Mobile</string>
+    <string name="app_name_after" translate="false">Walker</string>
+    <string name="app_tag" translate="false">Result only</string>
+
+    <string name="ok">Ок</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="undo">Отмена</string>
+
+    <string name="menu_import_task">Импорт заданий</string>
+    <string name="menu_route">Маршруты</string>
+    <string name="menu_point">Точки</string>
+    <string name="menu_settings">Настройки</string>
+    <!-- Preference Titles -->
+    <string name="about_header">О приложении</string>
+    <string name="sync_header">Интерфейс</string>
+
+    <!-- Messages Preferences -->
+    <string name="app_version">Версия приложения</string>
+
+    <string name="copyright">Copyright © 2021 Aleksandr Krasnov. All rights reserved.</string>
+
+    <string name="pin_code_fail">Код неверный</string>
+
+    <!-- Sync Preferences -->
+    <string name="pin_settings">Пин-код</string>
+    <string name="pin_settings_summary_on">Доступ в приложение по Пин-коду активирован.</string>
+    <string name="pin_settings_summary_off">Не активирован.</string>
+    <string name="pin_code_empty">Не указан.</string>
+
+    <string name="layout">Шаблон</string>
+    <string name="layout_summary">Шаблон формы по умолчанию.</string>
+
+    <string name="error_reporting">Отправлять отчеты об ошибке?</string>
+    <string name="error_reporting_full">В мобильном приложении для анализа ошибок используется Firebase Crashlytics. Разрешить отправлять отчеты об ошибках в Firebase?</string>
+    <string name="error_reporting_summary_off">Отчеты об ошибках будут направляются на сервера Firebase.</string>
+    <string name="error_reporting_summary_on">Отчеты об ошибках направляются на сервера Firebase.</string>
+    <string name="reset_settings">Сбросить настройки</string>
+    <string name="reset_settings_summary">Настройки приложения будут сброшены на значения по умолчанию.</string>
+    <string name="reset_settings_confirm">Вы уверены что хотите сбросить настройки на значения по умолчанию?</string>
+    <string name="reset_setting_success">Настройки сброшены.</string>
+    <string name="debug_mode">Режим отладки</string>
+    <string name="debug_mode_summary_on">Активирован режим отладки.</string>
+    <string name="debug_mode_summary_off">Режим отладки отключен.</string>
+    <string name="debug_mode_main">Основные</string>
+
+    <string name="attachment">Добавить файл</string>
+    <string name="choice_mode">Выберите способ получения файла.</string>
+    <string name="close">Закрыть</string>
+    <string name="image">Изображение</string>
+    <string name="camera">Камера</string>
+    <string name="album">Галерея</string>
+    <string name="choice_image">Выбрать изображение</string>
+
+    <string name="permissions_not_granted">Недостаточно разрешений для</string>
+    <string name="more">Подробнее</string>
+    <string name="location">Геолокация</string>
+    <string name="permission_location">Недостаточно разрешений на использование геолокации.</string>
+    <string name="route_item_subtitle">Доступно заданий</string>
+    <string name="info">Информация</string>
+    <string name="result_delete">Удалить результаты</string>
+
+    <string name="route_list_empty">Список маршрутов пустой.</string>
+    <string name="point_list_empty">Точек в маршруте не найдено.</string>
+    <string name="search">Поиск</string>
+    <string name="attention">Внимание</string>
+    <string name="action_share">Поделиться</string>
+    <string name="low">Низкий</string>
+    <string name="high">Высокий</string>
+    <string name="in_work">Получено</string>
+    <string name="exported">Экспортировано</string>
+    <string name="description">Описание</string>
+
+    <string name="geo_quality">Качество сигнала геолокации</string>
+    <string name="image_quality">Качество изображения</string>
+    <string name="image_height">Высота изображения</string>
+    <string name="history">История</string>
+    <string name="attach">Вложенный файл</string>
+    <string name="params">Параметры</string>
+    <string name="search_not_result">Поиск не дал результатов.</string>
+    <string name="create">Создать</string>
+    <string name="create_point">Создать точку</string>
+    <string name="point_name">Наименование или адрес</string>
+    <string name="point_description">Краткое описание точки</string>
+    <string name="map">Карта</string>
+    <string name="my_coordinate">Я</string>
+    <string name="address">Адрес</string>
+    <string name="done">Выполнено</string>
+
+    <string name="global_error">Идентификатор маршрута не найден.</string>
+
+    <string name="validate_empty">Поле обязательно для заполнения.</string>
+    <string name="create_point_error">Неизвестная ошибка при создании точки.</string>
+    <string name="create_point_error2">Для создания точки требуется геолокации.</string>
+
+    <string name="remove_point_error">Неизвестная ошибка удаления точки.</string>
+    <string name="remove_route_error">Неизвестная ошибка удаления маршрута.</string>
+    <string name="remove">Удалить</string>
+    <string name="result_remove">Удалить результат работы?</string>
+    <string name="results_remove">Удалить результаты работы?</string>
+
+    <string name="remove_result_error">Неизвестная ошибка удаления результата.</string>
+
+    <string name="point_remove">Удалить созданную ранее точку?</string>
+    <string name="route_remove">Удалить выполненный ранее маршрут?</string>
+    <string name="task">Задание</string>
+    <string name="result">Результат</string>
+    <string name="result_choice_desc">Какой результат работы зафиксировать?</string>
+
+    <string name="byt">байт</string>
+    <string name="kb">КБ</string>
+    <string name="mb">МБ</string>
+    <string name="gb">ГБ</string>
+    <string name="tb">ТБ</string>
+    <string name="unknown">неизвестно</string>
+    <string name="check">Подтверждено</string>
+    <string name="uncheck">Не подтверждено</string>
+    <string name="comment">Комментарий</string>
+
+    <string name="attach_remove">Удалить созданный ранее файл?</string>
+    <string name="attach_not_found">Файл не найден.</string>
+    <string name="camera_error">Ошибка добавления файла.</string>
+    <string name="import_name">Импорт</string>
+    <string name="import_txt">Импорт заданий из файла</string>
+    <string name="import_zip">Импорт архива</string>
+    <string name="import_layout">Импорт шаблона</string>
+
+    <string name="import_run">Выполнить импорт данных?</string>
+
+    <string name="import_error1">Ошибка удаление ошибочно созданного маршрута.</string>
+    <string name="import_error2">Ошибка создания маршрута из текстового файла.</string>
+    <string name="template_default">По умолчанию</string>
+
+    <string name="unknown_error">Неизвестная ошибка. Код </string>
+
+    <string name="zip_error">Каталог для сжатия не найден</string>
+    <string name="unzip_error">Ошибка с выходным каталогом. Код </string>
+
+    <string name="export_route_error_readme">Ошибка при формировании описания маршрута.</string>
+    <string name="export_route_error_id">Ошибка при формировании идентификатора маршрута.</string>
+    <string name="export_route_error_name">Ошибка при формировании наименования маршрута.</string>
+    <string name="export_route_error_settings">Ошибка при формировании настроек маршрута.</string>
+    <string name="export_route_error_tags">Ошибка при формировании меток маршрута.</string>
+    <string name="export_route_error_points">Ошибка при формировании точек маршрута.</string>
+    <string name="export_route_error_results">Ошибка при формировании результатов маршрута.</string>
+    <string name="export_route_error_not_found_zip">Архив не найден.</string>
+    <string name="route_update_error">Ошибка обновления статуса маршрута.</string>
+    <string name="layout_import_error">Ошибка импорта шаблона.</string>
+    <string name="layout_remove_error">Ошибка удаления шаблона.</string>
+    <string name="unpack">Распаковка файла…</string>
+    <string name="copy_data">Копирование данных…</string>
+    <string name="read_data">Чтение данных…</string>
+    <string name="web">Веб-сайт</string>
+
+    <string name="attach_require">Маршрут требует наличие вложенных файлов.</string>
+    <string name="location_require">Маршрут требует прикрепление геолокации к результату.</string>
+    <string name="export_route_title">Передача результата работ по маршруту {0} от {1}.</string>
+    <string name="pack">Архивация данных…</string>
+
+    <string name="result_save_error1">Ошибка обновления вложенных файлов.</string>
+    <string name="result_save_error2">Ошибка сохранения результата.</string>
+    <string name="result_save_error3">Ошибка обновления точки маршрута.</string>
+    <string name="result_save_error4">Для сохранения результата требуется вложенный файл. Перейти к выбору изображения?</string>
+    <string name="result_save_error5">Для сохранения результата требуется прикрепить геолокацию.</string>
+    <string name="files">Файлы</string>
+
+    <string name="create_route_docs">Для создания маршрута воспользуйтесь инструкцией с сайта {0}.</string>
+    <string name="demo_route">Демонстрационный маршрут</string>
+    <string name="demo_route_empty">Данные для демонстрационного маршрута не найдены.</string>
+    <string name="profile">Профиль</string>
+    <string name="demo_route_create">Для создания демонстрационного маршрута требуется подключение к интернету и доступ к геолокации.</string>
+    <string name="demo_route_question">Вы хотите создать маршрут?</string>
+    <string name="demo_route_created">Демонстрационный маршрут создан.</string>
+    <string name="go">Перейти</string>
+    <string name="demo_route_create_summary">Создание демонстрационного маршрута…</string>
+    <string name="network_not_found">Сеть не найдена.</string>
+    <string name="location_search">Поиск текущего местоположения…</string>
+</resources>

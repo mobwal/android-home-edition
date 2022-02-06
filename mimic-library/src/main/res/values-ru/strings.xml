@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="exception" translate="false">Exception: </string>
+    <string name="alert_title" translate="false">Mimic message</string>
+
+    <string name="min_value">Минимальное значение должно быть</string>
+    <string name="max_value">Максимальное значение должно быть</string>
+    <string name="button">Кнопка</string>
+    <string name="component_error">Ошибка обработки компонента</string>
+    <string name="require_field">Поле обязательно для заполнения</string>
+    <string name="error_min_value">Минимальная длина значения должна быть</string>
+    <string name="error_max_value">Максимальная длина значения должна быть</string>
+    <string name="select">Выбрать</string>
+</resources>

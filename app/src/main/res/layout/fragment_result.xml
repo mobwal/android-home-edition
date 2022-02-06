@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.result.ResultFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/indent_16">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".ui.result.ResultFragment">
+
+            <com.mobwal.home.ui.GeoLocationLayout
+                app:layout_constraintTop_toTopOf="parent"
+                android:id="@+id/create_result_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_16"
+                android:layout_marginStart="@dimen/indent_16"
+                android:layout_marginEnd="@dimen/indent_16"/>
+
+            <com.mobwal.home.ui.CheckLayout
+                app:layout_constraintTop_toBottomOf="@id/create_result_location"
+                android:id="@+id/create_result_check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/indent_16"
+                android:layout_marginStart="@dimen/indent_16"
+                android:layout_marginEnd="@dimen/indent_16"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+            <pw.appcode.mimic.SimpleFormLayout
+                android:id="@+id/create_result_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/create_result_check"
+                android:layout_marginTop="@dimen/indent_16"
+                android:layout_marginStart="@dimen/indent_16"
+                android:layout_marginEnd="@dimen/indent_16"/>
+
+            <TextView
+                android:id="@+id/create_result_gallery_label"
+                app:layout_constraintTop_toBottomOf="@id/create_result_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/files"
+                android:layout_marginTop="@dimen/indent_16"
+                android:layout_marginStart="@dimen/indent_16"
+                android:layout_marginEnd="@dimen/indent_16"
+                android:textColor="?android:attr/textColorSecondary"/>
+
+            <com.mobwal.home.ui.AttachmentLayout
+                android:id="@+id/create_result_gallery"
+                android:layout_width="match_parent"
+                android:layout_height="96dp"
+                app:layout_constraintTop_toBottomOf="@id/create_result_gallery_label"
+                android:layout_marginTop="@dimen/indent_8"
+                android:layout_marginStart="@dimen/indent_16"
+                android:layout_marginEnd="@dimen/indent_16" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/create_result_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="16dp"
+        app:srcCompat="@drawable/ic_baseline_save_24"
+        android:contentDescription="@string/create" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

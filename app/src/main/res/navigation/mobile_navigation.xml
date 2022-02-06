@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_route">
+
+    <fragment
+        android:id="@+id/nav_security"
+        android:name="com.mobwal.home.ui.global.SecurityFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_security" />
+
+    <fragment
+        android:id="@+id/nav_route"
+        android:name="com.mobwal.home.ui.route.RouteFragment"
+        android:label="@string/menu_route"
+        tools:layout="@layout/fragment_route" />
+
+    <fragment
+        android:id="@+id/nav_route_info"
+        android:name="com.mobwal.home.ui.route.RouteInfoFragment"
+        android:label="@string/info"
+        tools:layout="@layout/fragment_route_info" />
+
+    <fragment
+        android:id="@+id/nav_point"
+        android:name="com.mobwal.home.ui.point.PointFragment"
+        android:label="@string/menu_point"
+        tools:layout="@layout/fragment_point" />
+
+    <fragment
+        android:id="@+id/nav_create_point"
+        android:name="com.mobwal.home.ui.point.CreateFragment"
+        android:label="@string/create_point"
+        tools:layout="@layout/fragment_create_point" />
+
+    <fragment
+        android:id="@+id/nav_point_info"
+        android:name="com.mobwal.home.ui.point.InfoFragment"
+        android:label="@string/info"
+        tools:layout="@layout/fragment_point_info" />
+
+    <fragment
+        android:id="@+id/nav_result"
+        android:name="com.mobwal.home.ui.result.ResultFragment"
+        android:label="@string/result"
+        tools:layout="@layout/fragment_result" />
+
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.mobwal.home.ui.setting.SettingsFragment"
+        android:label="@string/menu_settings" />
+
+    <fragment
+        android:id="@+id/nav_debug_settings"
+        android:name="com.mobwal.home.ui.setting.DebugSettingsFragment"
+        android:label="@string/debug_mode" />
+
+    <fragment
+        android:id="@+id/nav_pin_settings"
+        android:name="com.mobwal.home.ui.setting.PinSettingsFragment"
+        android:label="@string/pin_settings" />
+
+    <fragment
+        android:id="@+id/nav_layout"
+        android:name="com.mobwal.home.ui.setting.LayoutFragment"
+        android:label="@string/layout" />
+
+</navigation>

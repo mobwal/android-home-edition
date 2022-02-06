@@ -1,0 +1,51 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <PreferenceCategory app:title="@string/sync_header">
+
+        <Preference
+            app:key="layout"
+            app:title="@string/layout"
+            app:summary="@string/layout_summary"
+            app:icon="@drawable/ic_baseline_layers_24"/>
+
+        <Preference
+            app:key="pin"
+            app:title="@string/pin_settings"
+            app:summary="@string/pin_settings_summary_off"
+            app:icon="@drawable/ic_baseline_fiber_pin_24"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/about_header">
+
+        <SwitchPreferenceCompat
+            app:key="error_reporting"
+            app:title="@string/error_reporting"
+            app:summaryOff="@string/error_reporting_summary_off"
+            app:summaryOn="@string/error_reporting_summary_on"
+            app:icon="@drawable/ic_baseline_bug_report_24" />
+
+        <Preference
+            app:key="reset_settings"
+            app:title="@string/reset_settings"
+            app:summary="@string/reset_settings_summary"
+            app:icon="@drawable/ic_baseline_settings_24"/>
+
+        <Preference
+            app:key="app_version"
+            app:title="@string/app_version"
+            tools:summary="1.2.0.235"
+            app:icon="@drawable/ic_baseline_info_blue_24" />
+
+        <Preference
+            app:key="debug"
+            app:isPreferenceVisible="false"
+            tools:isPreferenceVisible="true"
+            app:title="@string/debug_mode"
+            app:summary="@string/debug_mode_summary_on"
+            app:icon="@drawable/ic_baseline_developer_mode_24" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

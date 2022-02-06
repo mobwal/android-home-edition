@@ -1,0 +1,25 @@
+<resources>
+
+    <dimen name="indent_4">4dp</dimen>
+    <dimen name="indent_8">8dp</dimen>
+    <dimen name="indent_16">16dp</dimen>
+    <dimen name="indent_24">24dp</dimen>
+
+    <dimen name="font_36">36sp</dimen>
+    <dimen name="font_22">22sp</dimen>
+    <dimen name="font_18">18sp</dimen>
+    <dimen name="font_16">16sp</dimen>
+    <dimen name="font_14">14sp</dimen>
+    <dimen name="font_12">12sp</dimen>
+
+    <dimen name="size_48">48dp</dimen>
+    <dimen name="size_96">96dp</dimen>
+    <dimen name="size_144">144dp</dimen>
+    <dimen name="size_196">196dp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

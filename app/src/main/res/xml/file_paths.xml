@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths>
+    <files-path path="/" name="my_images" />
+    <cache-path path="/" name="my_cache" />
+    <external-path name="external_files" path="." />
+</paths>
+
+<!--
+https://developer.android.com/reference/androidx/core/content/FileProvider
+-->

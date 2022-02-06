@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingBottom="@dimen/indent_8">
+
+    <TextView
+        android:id="@+id/route_info_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Label"
+        android:textSize="@dimen/font_14"
+        android:layout_marginBottom="@dimen/indent_4"
+        android:textColor="?android:attr/textColorSecondary"/>
+
+    <TextView
+        android:id="@+id/route_info_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/route_info_label"
+        tools:text="Значение"
+        android:textSize="@dimen/font_16"
+        android:textColor="?android:attr/textColor" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

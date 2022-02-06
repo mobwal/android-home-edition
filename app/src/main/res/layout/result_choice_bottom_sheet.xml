@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:nestedScrollingEnabled="true">
+
+    <LinearLayout
+        android:id="@+id/result_choice_header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="@dimen/indent_16">
+
+        <TextView
+            android:id="@+id/result_choice_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/result"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textColor="?android:attr/textColor"/>
+
+        <TextView
+            android:id="@+id/result_choice_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/result_choice_desc"
+            android:textColor="?android:attr/textColorSecondary"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/result_choice_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="@dimen/indent_16"
+        app:layout_constraintTop_toBottomOf="@id/result_choice_header_layout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
