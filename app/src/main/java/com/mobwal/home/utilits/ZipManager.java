@@ -153,6 +153,10 @@ public class ZipManager {
                 while ((ze = zin.getNextEntry()) != null) {
                     String path = output + (ze.getName().startsWith(File.separator) ? ze.getName() : File.separator + ze.getName());
                     File unZipFile = new File(path);
+                    assert output != null;
+                    if (!path.startsWith(output)) {
+                        throw new SecurityException();
+                    }
 
                     if (ze.isDirectory()) {
                         if (!unZipFile.isDirectory()) {
