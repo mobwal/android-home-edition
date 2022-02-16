@@ -147,8 +147,9 @@ public class ResultFragment extends BaseFragment
         super.onSaveInstanceState(outState);
 
         outState.putParcelable("location", mLocation);
-        outState.putSerializable("items", binding.createResultGallery.getData());
-        outState.putString("fileName", binding.createResultGallery.FileName);
+
+        outState.putSerializable("items", mItems);
+        outState.putString("fileName", mAttachmentFileName);
     }
 
     @Override
@@ -216,6 +217,9 @@ public class ResultFragment extends BaseFragment
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if(item.getItemId() == R.id.action_info) {
+
+            mItems = binding.createResultGallery.getData();
+            mAttachmentFileName = binding.createResultGallery.FileName;
 
             NavController navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_content_main);
             Bundle bundle = new Bundle();

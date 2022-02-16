@@ -160,6 +160,8 @@ public class GeoLocationLayout extends LinearLayout
     }
 
     private void permissionMissing() {
+        showProgress(false);
+
         String message = ActivityUtil.getMessageNotGranted(getContext(), new String[] { getContext().getString(R.string.location) });
         Snackbar.make(getRootView(), message, Snackbar.LENGTH_LONG).setAction(getContext().getString(R.string.more), view -> getContext().startActivity(ActivityUtil.getIntentApplicationSetting(getContext()))).show();
         mCoordinate.setText(getContext().getString(R.string.permission_location));
