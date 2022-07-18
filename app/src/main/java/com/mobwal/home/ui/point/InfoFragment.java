@@ -10,6 +10,8 @@ import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
@@ -25,19 +27,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.LatLngBounds;
-import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
-
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.mobwal.home.DataManager;
 import com.mobwal.home.R;
 import com.mobwal.home.WalkerApplication;
@@ -47,12 +41,15 @@ import com.mobwal.home.models.PointInfo;
 import com.mobwal.home.models.db.Point;
 import com.mobwal.home.models.db.Result;
 import com.mobwal.home.ui.RecycleViewItemListeners;
+import com.mobwal.home.utilits.ActivityUtil;
+
+import org.osmdroid.views.overlay.Marker;
 
 /**
  * информация по точке
  */
 public class InfoFragment extends Fragment
-        implements OnMapReadyCallback, LocationListener, RecycleViewItemListeners {
+        implements LocationListener, RecycleViewItemListeners {
 
     private final static String LOCATION = "location";
 
@@ -61,7 +58,6 @@ public class InfoFragment extends Fragment
     private String f_result = null;
     private DataManager mDataManager;
     private PointInfoItemAdapter mPointInfoItemAdapter;
-    private GoogleMap mMap;
     private LocationManager mLocationManager;
     private final List<Marker> mMarkers;
     private Location mLocation;
@@ -70,9 +66,47 @@ public class InfoFragment extends Fragment
     @Nullable
     private Result[] mResults;
 
+    private final String[] REQUIRED_PERMISSIONS = new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
+    @Nullable
+    private final ActivityResultLauncher<String[]> mPermissionActivityResultLauncher;
+
+
     public InfoFragment() {
         // Required empty public constructor
         mMarkers = new ArrayList<>();
+
+        mPermissionActivityResultLauncher = registerForActivityResult(new ActivityResultContracts.RequestMultiplePermissions(), this::onPermission);
+    }
+
+    public void onPermission(Map<String, Boolean> result) {
+        boolean areAllGranted = true;
+        for (Boolean b : result.values()) {
+            areAllGranted = areAllGranted && b;
+        }
+
+        if (!areAllGranted) {
+            String message = ActivityUtil.getMessageNotGranted(requireContext(), new String[] { requireContext().getString(R.string.location) });
+            Snackbar.make(requireView(), message, Snackbar.LENGTH_LONG).setAction(requireContext().getString(R.string.more), view -> requireContext().startActivity(ActivityUtil.getIntentApplicationSetting(requireContext()))).show();
+        } else {
+            startUpdates();
+        }
+    }
+
+    @SuppressLint("MissingPermission")
+    private void startUpdates() {
+        if (ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(requireContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            WalkerApplication.Debug("Точки. Информация. Доступ к геолокации не предоставлен.");
+            if(mPermissionActivityResultLauncher != null) {
+                mPermissionActivityResultLauncher.launch(REQUIRED_PERMISSIONS);
+            }
+
+            //binding.pointInfoList.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        } else {
+            enableCompass(requireContext(), binding.osmPointInfoListMap);
+            mLocationManager.requestLocationUpdates(LocationManager.PASSIVE_PROVIDER, 1000, 1, this);
+            mLocationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000, 1, this);
+        }
     }
 
     @Override
@@ -377,6 +411,18 @@ public class InfoFragment extends Fragment
             if (!(f_result != null && mResults != null && mResults.length > 0)) {
                 mDeleteMenuItem.setVisible(false);
             }
+        }
+    }
+
+    /**
+     * Очистка меток на карте
+     */
+    private void clearMarkers() {
+        if(mMarkers.size() > 0) {
+            for (org.osmdroid.views.overlay.Marker marker: mMarkers) {
+                marker.remove(binding.osmPointInfoListMap);
+            }
+            mMarkers.clear();
         }
     }
 

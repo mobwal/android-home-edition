@@ -21,12 +21,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Arrays;
-import java.util.Date;
 import java.util.Hashtable;
-import java.util.Objects;
 import java.util.UUID;
 
 import com.mobwal.home.DataManager;
@@ -42,7 +38,7 @@ import com.mobwal.home.models.db.Result;
 import com.mobwal.home.models.db.Route;
 import com.mobwal.home.models.db.Template;
 import com.mobwal.home.ui.BaseFragment;
-import com.mobwal.home.ui.global.GoogleMapBottomDialogFragment;
+import com.mobwal.home.ui.global.OsmMapBottomDialogFragment;
 import com.mobwal.home.ui.GeoLocationLayout;
 import com.mobwal.home.ui.global.WalkerLocationListeners;
 import com.mobwal.home.utilits.JsonUtil;
@@ -58,7 +54,7 @@ public class ResultFragment extends BaseFragment
 
     private FragmentResultBinding binding;
     private DataManager mDataManager;
-    private GoogleMapBottomDialogFragment mGoogleMapBottomDialogFragment;
+    private OsmMapBottomDialogFragment mGoogleMapBottomDialogFragment;
 
     private boolean mLocationRequire = false;
     private boolean mImageRequire = false;
@@ -119,7 +115,7 @@ public class ResultFragment extends BaseFragment
         }
 
         mDataManager = new DataManager(requireContext());
-        mGoogleMapBottomDialogFragment = new GoogleMapBottomDialogFragment();
+        mGoogleMapBottomDialogFragment = new OsmMapBottomDialogFragment();
 
         if(getArguments() != null) {
             f_route = getArguments().getString("f_route");

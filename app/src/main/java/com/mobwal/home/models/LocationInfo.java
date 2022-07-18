@@ -8,6 +8,8 @@ import androidx.annotation.Nullable;
 
 import com.google.android.gms.maps.model.LatLng;
 
+import org.osmdroid.util.GeoPoint;
+
 import java.io.Serializable;
 
 public class LocationInfo
@@ -67,20 +69,20 @@ public class LocationInfo
      * @return преобразование
      */
     @Nullable
-    public LatLng convertToLatLng(String name) {
+    public GeoPoint convertToLatLng(String name) {
         if(TextUtils.isEmpty(name)) {
             return null;
         }
 
         if(name.equals(TASK)) {
             if(taskLongitude != null && taskLatitude != null) {
-                return new LatLng(taskLatitude, taskLongitude);
+                return new GeoPoint(taskLatitude, taskLongitude);
             }
         }
 
         if(name.equals(MY)) {
             if(myLongitude != null && myLatitude != null) {
-                return new LatLng(myLatitude, myLongitude);
+                return new GeoPoint(myLatitude, myLongitude);
             }
         }
 

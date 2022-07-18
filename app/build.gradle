@@ -30,7 +30,7 @@ android {
         applicationId "com.mobwal.home"
         minSdk 22
         targetSdk 31
-        versionCode 3
+        versionCode 4
         versionName getVersion()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         setProperty("archivesBaseName", getVersion())
@@ -53,10 +53,12 @@ android {
     buildFeatures {
         viewBinding true
     }
+    namespace 'com.mobwal.home'
 }
 
 dependencies {
     implementation project(path: ':mimic-library')
+    implementation 'org.osmdroid:osmdroid-android:6.1.13'
     implementation platform('com.google.firebase:firebase-bom:28.3.1')
     implementation 'com.google.firebase:firebase-crashlytics'
     implementation 'com.google.firebase:firebase-analytics'

@@ -18,16 +18,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import java.util.Objects;
-
 import com.mobwal.home.DataManager;
 import com.mobwal.home.R;
 import com.mobwal.home.WalkerApplication;
 import com.mobwal.home.databinding.FragmentCreatePointBinding;
 import com.mobwal.home.models.LocationInfo;
 import com.mobwal.home.models.SettingRoute;
-import com.mobwal.home.models.db.Attachment;
-import com.mobwal.home.ui.global.GoogleMapBottomDialogFragment;
+import com.mobwal.home.ui.global.OsmMapBottomDialogFragment;
 import com.mobwal.home.ui.GeoLocationLayout;
 import com.mobwal.home.ui.global.WalkerLocationListeners;
 
@@ -40,7 +37,7 @@ public class CreateFragment extends Fragment
     private FragmentCreatePointBinding binding;
     private String f_route = null;
     private DataManager mDataManager;
-    private GoogleMapBottomDialogFragment mGoogleMapBottomDialogFragment;
+    private OsmMapBottomDialogFragment mGoogleMapBottomDialogFragment;
     @Nullable
     private Location mLocation;
 
@@ -72,7 +69,7 @@ public class CreateFragment extends Fragment
             mLocation = savedInstanceState.getParcelable("location");
         }
 
-        mGoogleMapBottomDialogFragment = new GoogleMapBottomDialogFragment();
+        mGoogleMapBottomDialogFragment = new OsmMapBottomDialogFragment();
         mDataManager = new DataManager(requireContext());
 
         if(getArguments() != null) {
